@@ -49,6 +49,7 @@ steps:
     feedsToUse: 'select'
     packagesToPush: '$(Build.ArtifactStagingDirectory)/**/*.nupkg;!$(Build.ArtifactStagingDirectory)/**/*.symbols.nupkg'
     nuGetFeedType: 'internal'
-    publishVstsFeed: 'FleeFeed'
+    vstsFeed: 'octoate/FleeFeed'
+    publishVstsFeed: 'octoate/FleeFeed'
     versioningScheme: 'off'
     allowPackageConflicts: true
