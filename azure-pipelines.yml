@@ -38,6 +38,10 @@ steps:
     nobuild: true
     versioningScheme: 'off'
 
+# The third task is to authenticate NuGet to be able to publish the artifact to the Azure Artifacts feed
+- task: NuGetAuthenticate@0
+  displayName: 'NuGet Authenticate'
+
 # The last task is a nuget command, nuget push
 # This will push any .nupkg files to the 'TestFeed' artifact feed
 # allowPackageConflicts allows us to build the same version and not throw an error when trying to push
