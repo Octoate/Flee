@@ -30,8 +30,8 @@ steps:
 # Don't forget to run the unit tests on the application
 - task: DotNetCoreCLI@2
   inputs:
-    displayName: "dotnet test"
-    command: test
+    displayName: 'dotnet test'
+    command: 'test'
     projects: 'test/**/*.Test.csproj'
     arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
 
