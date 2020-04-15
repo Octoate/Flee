@@ -32,7 +32,7 @@ steps:
   displayName: 'dotnet test'
   inputs:
     command: 'test'
-    projects: 'test/**/*.Test.csproj'
+    projects: 'test/**/*.Tests.csproj'
     arguments: '--verbosity d --configuration $(buildConfiguration) --collect "Code coverage"'
 
 # The second task is dotnet pack command again pointing to the csproj file
