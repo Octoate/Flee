@@ -1,0 +1,60 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="TestScripts\CheckedTests.txt" />
+    <None Remove="TestScripts\FailingLongScriptWithManyFunctions.js" />
+    <None Remove="TestScripts\IndividualTests.xml" />
+    <None Remove="TestScripts\InvalidExpressions.txt" />
+    <None Remove="TestScripts\LongBranchLogicalTest.txt" />
+    <None Remove="TestScripts\LongScriptWithManyFunctions.js" />
+    <None Remove="TestScripts\readme.txt" />
+    <None Remove="TestScripts\SimpleCalcEngineTests.txt" />
+    <None Remove="TestScripts\ValidCasts.txt" />
+    <None Remove="TestScripts\ValidExpressions.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="TestScripts\CheckedTests.txt" />
+    <Content Include="TestScripts\FailingLongScriptWithManyFunctions.js" />
+    <Content Include="TestScripts\IndividualTests.xml" />
+    <Content Include="TestScripts\InvalidExpressions.txt" />
+    <Content Include="TestScripts\LongBranchLogicalTest.txt" />
+    <Content Include="TestScripts\LongScriptWithManyFunctions.js" />
+    <Content Include="TestScripts\readme.txt" />
+    <Content Include="TestScripts\SimpleCalcEngineTests.txt" />
+    <Content Include="TestScripts\ValidCasts.txt" />
+    <Content Include="TestScripts\ValidExpressions.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="nunit" Version="3.12.0" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.15.1" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Flee.NetStandard20\Flee.NetStandard20.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

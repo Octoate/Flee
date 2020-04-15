@@ -3,62 +3,62 @@
     using Flee.ExtensionMethodTests.ExtensionMethodTestData;
     using global::Flee.PublicTypes;
     using global::Flee.Test.Infrastructure;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using NUnit.Framework;
 
     /// <summary>The extension method test.</summary>
-    [TestClass]
+    [TestFixture]
     public class ExtensionMethodTest : ExpressionTests
     {
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnOwner()
         {
             var result = GetExpressionContext().CompileDynamic("SayHello()").Evaluate();
             Assert.AreEqual("Hello World", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnProperty()
         {
             var result = GetExpressionContext().CompileDynamic("Sub.SayHello()").Evaluate();
             Assert.AreEqual("Hello SubWorld", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnOwnerWithArguments()
         {
             var result = GetExpressionContext().CompileDynamic("SayHello(\"!!!\")").Evaluate();
             Assert.AreEqual("Hello World!!!", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnOwnerWithArgumentsOnOverload()
         {
             var result = GetExpressionContext().CompileDynamic("SayHello(true)").Evaluate();
             Assert.AreEqual("Hello dear World", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnOwnerWithArgumentsOnClassOverload()
         {
             var result = GetExpressionContext().CompileDynamic("SayHello(2)").Evaluate();
             Assert.AreEqual("hello hello World", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnPropertyWithArguments()
         {
             var result = GetExpressionContext().CompileDynamic("Sub.SayHello(\"!!!\")").Evaluate();
             Assert.AreEqual("Hello SubWorld!!!", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnPropertyWithArgumentsOnClassOverload()
         {
             var result = GetExpressionContext().CompileDynamic("Sub.SayHello(2)").Evaluate();
             Assert.AreEqual("hello hello SubWorld", result);
         }
 
-        [TestMethod]
+        [Test]
         public void TestExtensionMethodCallOnPropertyWithArgumentsOnOverload()
         {
             var result = GetExpressionContext().CompileDynamic("Sub.SayHello(\"!!!\")").Evaluate();
